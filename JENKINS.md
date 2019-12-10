@@ -1,6 +1,6 @@
 <center><img src="https://cdn.ttgtmedia.com/visuals/LeMagIT/hero_article/Logo-Jenkins.jpg" alt="Jenkins" width="290"/></center>
 
-# Jenkins - Installation du docker :  
+# Installation du docker :  
 ``` 
 docker pull frouland/myjenkins:0.2   
 docker run -d --name JenkinsCI -e http_proxy='' -e https_proxy='' -p 8080:8080 -p 50000:50000  
@@ -15,14 +15,14 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 2. Maven *(décocher Install automatically)* : Nom=M3 MAVEN_HOME=/usr/share/maven
 		
 
-# Jenkins - Création d'un projet Freestyle
+# Création d'un projet Freestyle
 - Créer un projet free-style nommé "Petclinic" qui devra :
 1. Récupérer les sources de spring-framework-petclinic dans GitHub
 2. Lancer la tâche de compilation maven : **mvn -B -DskipTests -DproxySet=true -DproxyHost=marc.proxy.corp.sopra -DproxyPort=8080 clean package**
 3. Archiver l'artifact généré (petclinic.war)
 4. Renommer le fichier petclinic.war généré dans le dossier target de la façon suivante : petclinic-NUM_BUILD-TIMESTAMP.war Exemple : 
 
-# Jenkins - Création d'un projet Maven
+# Création d'un projet Maven
 - Installer les plugins suivants :
 1. Maven integration
 2. Parameterized Trigger
@@ -52,13 +52,6 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 2. Lance la tâche maven "package"
 
 
-# Sonar - Installation du docker
-- Lancer le docker Sonarqube :   
-```
-docker run -d --name sonarqube -p 9000:9000 sonarqube
-```
-- Dans un navigateur, aller sur l'URL : http://localhost:9000
-- Se connecter avec le compte "admin" (mdp: admin)
 
 
 

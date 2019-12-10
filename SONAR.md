@@ -1,7 +1,15 @@
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Sonarqube-48x200.png" alt="Sonarqube" width="300"/></center>
 
 
-# Sonar - Analyse du projet spring-fremework-petclinic
+# Sonar - Installation du docker
+- Lancer le docker Sonarqube :   
+```
+docker run -d --name sonarqube -p 9000:9000 sonarqube
+```
+- Dans un navigateur, aller sur l'URL : http://localhost:9000
+- Se connecter avec le compte "admin" (mdp: admin)
+
+# Analyse du projet spring-fremework-petclinic
 
 - Se connecter sur le docker JenkinsCI avec la commande bash : 
 ```
