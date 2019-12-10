@@ -27,9 +27,10 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 1. Maven integration
 2. Parameterized Trigger
 
-<span style="display:block;text-align:center">
-<img src="images/image1.png"/>
-</span>
+
+Cible :
+<img src="images/image1.png" width="1042"/>
+
 
 ## Item Petclinic compile :
 - Nom : Petclinic compile
