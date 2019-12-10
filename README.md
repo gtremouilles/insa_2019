@@ -1,4 +1,4 @@
-#Jenkins - Installation du docker :  
+##Jenkins - Installation du docker :  
 ``` 
 docker pull frouland/myjenkins:0.2   
 docker run -d --name JenkinsCI -e http_proxy='' -e https_proxy='' -p 8080:8080 -p 50000:50000  
@@ -20,14 +20,14 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 3. Archiver l'artifact généré (petclinic.war)
 4. Renommer le fichier petclinic.war généré dans le dossier target de la façon suivante : petclinic-NUM_BUILD-TIMESTAMP.war Exemple : 
 
-#Jenkins - Création d'un projet Maven
+##Jenkins - Création d'un projet Maven
 - Installer les plugins suivants :
 1. Maven integration
 2. Parameterized Trigger
 
 <center>![image1](./image.png)</center>
 
-## Item Petclinic compile :
+### Item Petclinic compile :
 - Nom : Petclinic compile
 - Type : Projet Maven
 - Actions :
@@ -35,14 +35,14 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 2. Lance la tâche maven "clean compile"
 3. Appel l'item Petclinic package avec passage du paramètre WORKSPACE_PARENT
 
-## Item Petclinic package :
+### Item Petclinic package :
 - Nom : Petclinic package
 - Type : Projet Maven
 - Actions :
 1. Prends en paramètre le workspace du build parent (WORKSPACE_PARENT)
 2. Lance la tâche maven "package"
 
-## Item Petclinic deployQualification :
+### Item Petclinic deployQualification :
 - Nom : Petclinic deployQualification
 - Type : Projet Maven
 - Actions :
@@ -50,7 +50,7 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 2. Lance la tâche maven "package"
 
 
-#Sonar - Installation du docker
+##Sonar - Installation du docker
 - Lancer le docker Sonarqube :   
 ```
 docker run -d --name sonarqube -p 9000:9000 sonarqube
@@ -58,7 +58,7 @@ docker run -d --name sonarqube -p 9000:9000 sonarqube
 - Dans un navigateur, aller sur l'URL : http://localhost:9000
 - Se connecter avec le compte "admin" (mdp: admin)
 
-#Sonar - Analyse du projet spring-fremework-petclinic
+##Sonar - Analyse du projet spring-fremework-petclinic
 
 - Se connecter sur le docker JenkinsCI avec la commande bash : 
 ```
