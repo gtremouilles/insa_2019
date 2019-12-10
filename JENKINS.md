@@ -1,5 +1,3 @@
-[JENKINS.md](JENKINS.md "TP Jenkins")
-
 # Jenkins - Installation du docker :  
 ``` 
 docker pull frouland/myjenkins:0.2   
@@ -27,6 +25,7 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 1. Maven integration
 2. Parameterized Trigger
 
+<center>![image1](./image.png)</center>
 
 ## Item Petclinic compile :
 - Nom : Petclinic compile
