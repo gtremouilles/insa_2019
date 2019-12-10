@@ -20,14 +20,16 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 1. Récupérer les sources de spring-framework-petclinic dans GitHub
 2. Lancer la tâche de compilation maven : **mvn -B -DskipTests -DproxySet=true -DproxyHost=marc.proxy.corp.sopra -DproxyPort=8080 clean package**
 3. Archiver l'artifact généré (petclinic.war)
-4. Renommer le fichier petclinic.war généré dans le dossier target de la façon suivante : petclinic-NUM_BUILD-TIMESTAMP.war Exemple : 
+4. Ajouter une tâche pour renommer le fichier petclinic.war généré dans le dossier target de la façon suivante : petclinic-NUM_BUILD-TIMESTAMP.war Exemple : petclinic-4-20191210102322.war
 
 # Création d'un projet Maven
 - Installer les plugins suivants :
 1. Maven integration
 2. Parameterized Trigger
 
-<center>![image1](./image.png)</center>
+<span style="display:block;text-align:center">
+<img src="images/image1.png"/>
+</span>
 
 ## Item Petclinic compile :
 - Nom : Petclinic compile
@@ -35,21 +37,32 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 - Actions :
 1. Récupère les sources sur GitHub 
 2. Lance la tâche maven "clean compile"
-3. Appel l'item Petclinic package avec passage du paramètre WORKSPACE_PARENT
+
+## Création d'une vue de type "Delivery Pipeline View"
+- Nom de la vue : Petclinic pipeline
+- Dans la zone "Pipelines", ajouter un component avec :
+ - Name=Petclinic pipeline
+ - Initial Job=Petclinic compile
+- Afficher la nouvelle vue
 
 ## Item Petclinic package :
 - Nom : Petclinic package
 - Type : Projet Maven
+- Paramètre string : WORKSPACE_PARENT
 - Actions :
 1. Prends en paramètre le workspace du build parent (WORKSPACE_PARENT)
 2. Lance la tâche maven "package"
+3.Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSAPCE_PARENT
+- Modifier l'item "Petclinic compile" pour ajouter l'appel à l'item "Petclinic package" après le lancement de la tâche maven "clean compile". Initialiser la variable WORKSPACE_PARENT avec le workspace de l'item "Petclinic compile"
+
+> Astuce : Chainer les items en utilisant une action "Trigger parameterized build on other projects"
 
 ## Item Petclinic deployQualification :
 - Nom : Petclinic deployQualification
-- Type : Projet Maven
+- Type : Projet free-style
 - Actions :
 1. Prends en paramètre le workspace du build parent (WORKSPACE_PARENT)
-2. Lance la tâche maven "package"
+2. Copie le fichier petclinic.war du workspace (répertoire target) dans XXX
 
 
 
