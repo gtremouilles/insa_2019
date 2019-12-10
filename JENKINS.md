@@ -1,6 +1,6 @@
 <center><img src="https://cdn.ttgtmedia.com/visuals/LeMagIT/hero_article/Logo-Jenkins.jpg" alt="Jenkins" width="290"/></center>
 
-# Installation du docker :  
+# Installation du docker
 ``` 
 docker pull frouland/myjenkins:0.2   
 docker run -d --name JenkinsCI -e http_proxy='' -e https_proxy='' -p 8080:8080 -p 50000:50000  
@@ -10,7 +10,7 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 - Ajout du mot de passe admin pour débloquer Jenkins
 - Mise à jour du proxy dans Jenkins pour les plugins : http://localhost:8080/pluginManager/advanced  
 - Installation des plugins par défaut
-- Administrer Jenkins :
+- Administrer Jenkins > Configuration globale des outils :
 1. JDK *(décocher Install automatically)* : Nom=java-1.8-openjdk JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
 2. Maven *(décocher Install automatically)* : Nom=M3 MAVEN_HOME=/usr/share/maven
 		
@@ -29,10 +29,12 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 
 
 Cible :
-<img src="images/image1.png" width="1042"/>
+<center> 
+<img src="images/image1.png"/>
+</center>
 
 
-## Item Petclinic compile :
+## Item Petclinic compile
 - Nom : Petclinic compile
 - Type : Projet Maven
 - Actions :
@@ -46,14 +48,14 @@ Cible :
  - Initial Job=Petclinic compile
 - Afficher la nouvelle vue
 
-## Item Petclinic package :
+## Item Petclinic package
 - Nom : Petclinic package
 - Type : Projet Maven
 - Paramètre string : WORKSPACE_PARENT
 - Actions :
-1. Prends en paramètre le workspace du build parent (WORKSPACE_PARENT)
+1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Lance la tâche maven "package"
-3.Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSAPCE_PARENT
+3. Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSAPCE\_PARENT
 - Modifier l'item "Petclinic compile" pour ajouter l'appel à l'item "Petclinic package" après le lancement de la tâche maven "clean compile". Initialiser la variable WORKSPACE_PARENT avec le workspace de l'item "Petclinic compile"
 
 > Astuce : Chainer les items en utilisant une action "Trigger parameterized build on other projects"
@@ -62,8 +64,9 @@ Cible :
 - Nom : Petclinic deployQualification
 - Type : Projet free-style
 - Actions :
-1. Prends en paramètre le workspace du build parent (WORKSPACE_PARENT)
+1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Copie le fichier petclinic.war du workspace (répertoire target) dans XXX
+3. Modifier l'item "Petclinic compile" pour ajouter l'appel à l'item "Petclinic package" après le lancement de la tâche maven "clean compile". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "Petclinic compile"
 
 
 
