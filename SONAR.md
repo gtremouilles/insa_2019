@@ -1,4 +1,4 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Sonarqube-48x200.png" alt="Sonarqube" width="300"/>
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Sonarqube-48x200.png" alt="Sonarqube" width="300"/></center>
 
 
 # Sonar - Analyse du projet spring-fremework-petclinic
