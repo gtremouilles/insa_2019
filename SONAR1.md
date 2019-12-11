@@ -14,7 +14,8 @@ But : Ajouter un nouveau profil "**Java**" qui est une copie du profil "**Sonar 
 
 <center><img src="images/sonar4.png" alt="Sonarqube" width="1042"/></center>
 
-
+- Définir ce nouveau profil Java comme profil par défaut
+- Relancer une analyse Sonar, que se passe-t-il ?
 
 
 # Quality Gates

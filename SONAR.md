@@ -15,7 +15,7 @@ docker run -d --name sonarqube -p 9000:9000 sonarqube
 ```
 docker exec -it JenkinsCI bash
 ``` 
-- Récupérer les sources du projet spring-framework-petclinic :  
+- Récupérer les sources du projet spring-framework-petclinic (remplacer XXXXXXX par votre compte GitHub) :  
 ```
 git clone https://github.com/XXXXXXX/spring-framework-petclinic.git
 ```
