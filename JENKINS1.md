@@ -15,9 +15,9 @@
 
 ----------
 
-## Item "Petclinic compile"
+## Item "Petclinic_compile"
 - Description : cet item se chargera de récupérer les sources du projet sur GitHub et lancera la compilation sous Maven.
-- Nom : Petclinic compile
+- Nom : Petclinic_compile
 - Type : Projet Maven
 - Actions :
 1. Récupère les sources sur GitHub 
@@ -27,12 +27,13 @@
 - Description : cette vue permmettra d'afficher les enchaînements entre les items.
 - Nom de la vue : Petclinic pipeline
 - Dans la zone "Pipelines", ajouter un component avec :
- - Name=Petclinic pipeline
- - Initial Job=Petclinic compile
+ - Name : Petclinic pipeline
+ - Initial Job : Petclinic_compile
 - Afficher la nouvelle vue
 
-## Item Petclinic package
-- Nom : Petclinic package
+## Item Petclinic_package
+- Description : cet item doit faite le package WAR du projet. Il doit pouvoir utiliser le workspace de l'item précédent.
+- Nom : Petclinic_package
 - Type : Projet Maven
 - Paramètre string : WORKSPACE_PARENT
 - Actions :
@@ -42,13 +43,13 @@
 - Modifier l'item "Petclinic compile" pour ajouter l'appel à l'item "Petclinic package" après le lancement de la tâche maven "clean compile". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "Petclinic compile"
 > Astuce : Chaîner les items en utilisant une action "Trigger parameterized build on other projects"
 
-## Item "Petclinic deployQualification" :
-- Nom : Petclinic deployQualification
+## Item "Petclinic_deployQualification" :
+- Nom : Petclinic_deployQualification
 - Type : Projet free-style
 - Actions :
 1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Copie le fichier petclinic.war du workspace (répertoire target) dans /var/tmp
-3. Modifier l'item "Petclinic compile" pour ajouter l'appel à l'item "Petclinic package" après le lancement de la tâche maven "clean compile". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "Petclinic compile"
+3. Modifier l'item "Petclinic_package" pour ajouter l'appel à l'item "Petclinic_deployQualification" après le lancement de la tâche maven "package". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "Petclinic_package"
 
 
 
