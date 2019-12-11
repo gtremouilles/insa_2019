@@ -15,7 +15,7 @@
 
 ----------
 
-## Item "Petclinic_compile"
+## Création de l'item "Petclinic_compile"
 - Description : cet item se chargera de récupérer les sources du projet sur GitHub et lancera la compilation sous Maven.
 - Nom : Petclinic_compile
 - Type : Projet Maven
@@ -31,7 +31,7 @@
  - Initial Job : Petclinic\_compile
 - Afficher la nouvelle vue
 
-## Item Petclinic_package
+## Création de l'item Petclinic_package
 - Description : cet item doit faite le package WAR du projet. Il doit pouvoir utiliser le workspace de l'item précédent.
 - Nom : Petclinic\_package
 - Type : Projet Maven
@@ -43,7 +43,7 @@
 - Modifier l'item "**Petclinic\_compile**" pour ajouter l'appel à l'item "**Petclinic\_package**" après le lancement de la tâche maven "**clean compile**". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "**Petclinic\_compile**"
 > Astuce : Chaîner les items en utilisant une action "Trigger parameterized build on other projects"
 
-## Item "Petclinic_deployQualification" :
+## Création de l'item "Petclinic_deployQualification" :
 - Nom : Petclinic_deployQualification
 - Type : Projet free-style
 - Actions :

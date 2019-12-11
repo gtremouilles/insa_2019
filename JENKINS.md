@@ -11,19 +11,20 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 - Ajout du mot de passe admin pour débloquer Jenkins
 - Mise à jour du proxy dans Jenkins pour les plugins : http://localhost:8080/pluginManager/advanced  
 - Installation des plugins par défaut
-- Administrer Jenkins > Configuration globale des outils :
+- Aller dans "**Administrer Jenkins > Configuration globale des outils**" pour configurer les outils suivants :
 1. JDK *(décocher Install automatically)* : 
 	- Nom : java-1.8-openjdk 
 	- JAVA\_HOME : /usr/lib/jvm/java-1.8-openjdk
 2. Maven *(décocher Install automatically)* : 
 	- Nom : M3 
-	- MAVEN\_HOME : /usr/share/maven  
-- Configuration du proxy maven :  
+	- MAVEN\_HOME : /usr/share/maven 
+ 
+- Configuration du proxy maven dans le docker JenkinsCI :  
 ```
 docker exec -it JenkinsCI bash  
 dos2unix /usr/share/maven/conf/settings.xml   
 ``` 	
-Editer le fichier /usr/share/maven/conf/settings.xml et ajouter les lignes suivantes dans la section **proxies** :  
+Editer le fichier "**/usr/share/maven/conf/settings.xml**" et ajouter les lignes suivantes dans la section **proxies** :  
 ```xml
 <proxy>  
 	<id>optional</id>  

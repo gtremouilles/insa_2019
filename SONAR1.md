@@ -30,7 +30,8 @@ But : Ajouter une condition pour faire échouer le résultat de l'analyse Sonar.
 - Relancer une analyse Sonar  
 - Vérifier que l'analyse est en bien à l'état "**Failed**"
 
-<center><img src="images/sonar5.png" alt="Sonarqube" width="300"/></center>
-- Vérifier que le bon "**Quality gate**" a été utilisé :
-<center><img src="images/sonar6.png" alt="Sonarqube" width="130"/></center>
+<center><img src="images/sonar5.png" alt="Sonarqube" width="300"/></center> 
+ 
+- Vérifier que le bon "**Quality gate**" a été utilisé :  
+<center><img src="images/sonar6.png" alt="Sonarqube" width="130"/></center>  
 
