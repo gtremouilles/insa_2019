@@ -26,6 +26,7 @@
 
 # Optionel
 
-[TP1 : Utilisation d'un Jenkinsfile](OPTION1.md "Ouvrir le TP1 Optionel")  
+[TP1 : Jenkins - Utilisation du plugin "promoted builds"](OPTION1.md "Ouvrir le TP1 Optionel")  
+[TP2 : Jenkins - Utilisation d'un Jenkinsfile](OPTION2.md "Ouvrir le TP2 Optionel")  
 
  
