@@ -24,7 +24,7 @@
 
 ----------
 
-#Optionel
+# Optionel
 
 [TP1 : Utilisation d'un Jenkinsfile](OPTION1.md "Ouvrir le TP1 Optionel")  
 
