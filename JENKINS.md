@@ -3,7 +3,7 @@
 # Installation du docker
 ``` 
 docker pull frouland/myjenkins:0.2   
-docker run -d --name JenkinsCI -e http_proxy='' -e https_proxy='' -p 8080:8080 -p 50000:50000  
+docker run -d --name JenkinsCI -e http_proxy='proxy.insa-rouen.fr:3128' -e https_proxy='proxy.insa-rouen.fr:3128' -p 8080:8080 -p 50000:50000  
 docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword   
 ```
 
@@ -17,22 +17,45 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 	- JAVA\_HOME : /usr/lib/jvm/java-1.8-openjdk
 2. Maven *(décocher Install automatically)* : 
 	- Nom : M3 
-	- MAVEN\_HOME : /usr/share/maven
-		
+	- MAVEN\_HOME : /usr/share/maven  
+- Configuration du proxy maven :  
+```
+docker exec -it JenkinsCI bash  
+dos2unix /usr/share/maven/conf/settings.xml   
+``` 	
+Editer le fichier /usr/share/maven/conf/settings.xml et ajouter les lignes suivantes dans la section **proxies** :  
+```xml
+<proxy>  
+	<id>optional</id>  
+	<active>true</active>  
+	<protocol>http</protocol>  
+	<username></username>  
+	<password></password>  
+	<host>proxy.insa-rouen.fr</host>  
+	<port>3128</port>  
+	<nonProxyHosts>local.net|some.host.com</nonProxyHosts>  
+</proxy>  
+```
+
+
 
 # Création d'un projet free-style
-- Créer un projet free-style nommé "Petclinic" qui devra :
+- Créer un projet free-style nommé "**Petclinic**" qui devra :
 1. Récupérer les sources de **spring-framework-petclinic** dans GitHub
-2. Lancer la tâche de compilation maven : **mvn -B -DskipTests -DproxySet=true -DproxyHost=marc.proxy.corp.sopra -DproxyPort=8080 clean package** en executant un script shell
-3. Ajouter une tâche pour renommer le fichier **petclinic.war** généré dans le dossier target de la façon suivante : petclinic-NUM_BUILD-TIMESTAMP.war Exemple : petclinic-4-20191210102322.war 
+2. Créer une tâche du build avec le type "**Invoquer les cibles Maven de haut niveau**"
+3. Sélectionner la version de maven
+4. Appel des cibles "**clean package**"  
+5. Dans "**Avancé...**", ajouter la propriété "**skipTests=true**" pour éviter le lancement des tests
+6. Lancer le build manuellement
+7. Consulter le log du build et l'espace de travail
+
+8. Ajouter une nouvelle tâche dans le build pour renommer le fichier **petclinic.war** généré dans le dossier target du workspace. Le fichier sera renommé de la façon suivante : petclinic-NUM_BUILD-TIMESTAMP.war Exemple : petclinic-4-20191210102322.war 
 > Astuce :  
 > DATE\_WITH\_TIME=`date "+%Y%m%d-%H%M%S"`;   
-> NEW\_NAME="petclinic\_$BUILD\_NUMBER-$DATE\_WITH\_TIME.war";
-
-4. Ajouter une action à la suite du build pour archiver l'artifact généré (fichier WAR)
-5. Lancer le build manuellement
-6. Consulter le log du build et l'espace de travail
-7. (Option) Ajouter une action pour supprimer le workspace une fois le build terminé
+> NEW\_NAME="petclinic\_$BUILD\_NUMBER-$DATE\_WITH\_TIME.war";  
+9. Ajouter une action à la suite du build pour archiver l'artifact généré (fichier WAR)
+10. Lancer le build manuellement  
+12. (Option) Ajouter une action pour supprimer le workspace une fois le build terminé
 
 
 

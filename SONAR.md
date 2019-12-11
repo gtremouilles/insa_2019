@@ -19,13 +19,9 @@ docker exec -it JenkinsCI bash
 ```
 git clone https://github.com/XXXXXXX/spring-framework-petclinic.git
 ```
-- Lancer un build du projet :   
-```
-mvn -B -DskipTests clean compile
-```
 - Lancer une analyse sonar :   
 ```
-mvn sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
+mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
 ```
 
 - Consulter les résultats sur Sonarqube :
