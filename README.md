@@ -4,12 +4,10 @@
 
 <center><img src="images/jenkins.png" width="300"/></center>
 
-# Jenkins
 [TP1 : Installation et création d'un projet free-style](JENKINS1.md "Ouvrir le TP Jenkins")   
 
-<center><img src="images/sonar.png" width="300"/></center>
+<center><img src="images/sonarqube.png" width="300"/></center>
 
-# Sonarqube
 [TP Sonarqube](SONAR.md "Ouvrir le TP Sonarqube")
 
 
