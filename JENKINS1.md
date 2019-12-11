@@ -43,7 +43,7 @@
 - Modifier l'item "**Petclinic\_compile**" pour ajouter l'appel à l'item "**Petclinic\_package**" après le lancement de la tâche maven "**clean compile**". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "**Petclinic\_compile**"
 > Astuce : Chaîner les items en utilisant une action "Trigger parameterized build on other projects"
 
-## Création de l'item "Petclinic_deployQualification" :
+## Création de l'item "Petclinic_deployQualification"
 - Nom : Petclinic_deployQualification
 - Type : Projet free-style
 - Actions :
@@ -51,9 +51,13 @@
 2. Copie le fichier **petclinic.war** du workspace (répertoire target) dans **/var/tmp**
 3. Modifier l'item "Petclinic\_package" pour ajouter l'appel à l'item "Petclinic\_deployQualification" après le lancement de la tâche maven "**package**". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "**Petclinic\_package**"
 
-
-
-
+## Lancement du build 
+- Lancer le build manuellement et vérifier que le WAR est bien déployé dans le répertoire "**/var/tmp**"  
+- Optimiser le démarrage du build en scrutant l'outil de gestion de version toutes les minutes  
+> Astuce : Utiliser l'expression * * * * * pour exécuter la tâche toutes les minutes 
+ 
+- Faire une modification sur le projet sous GitHub puis un commit  
+- Vérifier que le build se lance bien automatiquement  
 
 
 
