@@ -1,4 +1,4 @@
-<center><img src="https://cdn.ttgtmedia.com/visuals/LeMagIT/hero_article/Logo-Jenkins.jpg" alt="Jenkins" width="290"/></center>
+<center><img src="images/jenkins.png" alt="Jenkins" width="290"/></center>
 
 # Installation du docker
 ``` 
