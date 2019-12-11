@@ -1,15 +1,19 @@
 <center><img src="images/jenkins.png" alt="Jenkins" width="290"/></center>
+
 # Création d'un projet Maven
 - Installer les plugins suivants :
 1. Maven integration
 2. Parameterized Trigger
 3. Delivery Pipeline Plugin
 
-Cible à atteindre :
+----------
+
+- Cible à atteindre :
 <center> 
 <img src="images/image1.png"/>
 </center>
 
+----------
 
 ## Item "Petclinic compile"
 - Description : cet item se chargera de récupérer les sources du projet sur GitHub et lancera la compilation sous Maven.
