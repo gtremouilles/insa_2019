@@ -1,7 +1,8 @@
 <center><img src="images/sonarqube.png" alt="Sonarqube" width="300"/></center>
 
 # Intégration dans Jenkins
-But : Ajouter un item d'analyse Sonar en parallèle de l'item "**Petclinic_package**"
+But : Ajouter un item d'analyse Sonar en parallèle de l'item "**Petclinic_package**"  
+<center><img src="images/jenkins1.png" alt="Sonarqube" width="1042"/></center>
 
 ## Installation du plugin Sonar Scanner
 - Installer le plugin "**SonarQube Scanner**" (sans redémarrage)
@@ -28,6 +29,11 @@ But : Ajouter un item d'analyse Sonar en parallèle de l'item "**Petclinic_packa
 1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)  
 2. Lance un build de type "**Lancer une analyse avec SonarQube Scanner**"  
 	- Sélectionner le JDK "**java-1.8-openjdk**" 
+	- Ajouter les propriétés suivantes :  
+```
+sonar.java.binaries=target/classes  
+sonar.projectBaseDir=$WORKSPACE_PARENT  
+```
 3. Modifier l'item "**Petclinic\_compile**" pour pouvoir lancer l'item "**Petclinic\_sonar**" en parallèle de l'item "**Petclinic\_package**"  
 
 
