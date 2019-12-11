@@ -2,7 +2,7 @@
 
 # Intégration dans Jenkins
 But : Ajouter un item d'analyse Sonar en parallèle de l'item "**Petclinic_package**"  
-<center><img src="images/jenkins1.png" alt="Sonarqube" width="1042"/></center>
+<center><img src="images/jenkins1.png" alt="Sonarqube" width="600"/></center>
 
 ## Installation du plugin Sonar Scanner
 - Installer le plugin "**SonarQube Scanner**" (sans redémarrage)
