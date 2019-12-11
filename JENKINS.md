@@ -23,13 +23,13 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 # Création d'un projet free-style
 - Créer un projet free-style nommé "Petclinic" qui devra :
 1. Récupérer les sources de **spring-framework-petclinic** dans GitHub
-2. Lancer la tâche de compilation maven : **mvn -B -DskipTests -DproxySet=true -DproxyHost=marc.proxy.corp.sopra -DproxyPort=8080 clean package** en executant un scipt shell
+2. Lancer la tâche de compilation maven : **mvn -B -DskipTests -DproxySet=true -DproxyHost=marc.proxy.corp.sopra -DproxyPort=8080 clean package** en executant un script shell
 3. Ajouter une tâche pour renommer le fichier **petclinic.war** généré dans le dossier target de la façon suivante : petclinic-NUM_BUILD-TIMESTAMP.war Exemple : petclinic-4-20191210102322.war 
 > Astuce :  
 > DATE\_WITH\_TIME=`date "+%Y%m%d-%H%M%S"`;   
 > NEW\_NAME="petclinic\_$BUILD\_NUMBER-$DATE\_WITH\_TIME.war";
 
-4. Ajouter une action à la suite du build pour archiver l'artifact généré (petclinic.war)
+4. Ajouter une action à la suite du build pour archiver l'artifact généré (fichier WAR)
 5. Lancer le build manuellement
 6. Consulter le log du build et l'espace de travail
 7. (Option) Ajouter une action pour supprimer le workspace une fois le build terminé

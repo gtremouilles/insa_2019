@@ -45,7 +45,7 @@ mvn sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
 - Vérifier que le bug a bien disparu dans l'analyse
 
 # Ajout d'un nouveau bug
-- A partir du menu "**Rules**", sélectionner une règle de type "**Bug**" dans le langage Java
-- Copier la partie "Noncompliant Code Example" de cette règle et coller les lignes dans un fichier source Java du projet spring-framework-petclinic
+- A partir du menu "**Rules**", sélectionner une règle de type "**Bug**" dans le langage "**Java**"
+- Copier la partie "**Noncompliant Code Example**" de cette règle et coller les lignes dans un fichier source Java du projet spring-framework-petclinic
 - Relancer une analyse Sonar
 - Vérifier que votre nouveau bug est bien remonté dans l'analyse Sonar
