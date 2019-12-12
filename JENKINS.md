@@ -4,12 +4,14 @@
 ``` 
 docker pull frouland/myjenkins:0.2   
 docker run -d --name JenkinsCI -e http_proxy='proxy.insa-rouen.fr:3128' -e https_proxy='proxy.insa-rouen.fr:3128' -p 8080:8080 -p 50000:50000  
-docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword   
 ```
 
 - Dans un navigateur, ouvrir l'URL : [http://localhost:8080/](http://localhost:8080/)
-- Ajout du mot de passe admin pour débloquer Jenkins
-- Mise à jour du proxy dans Jenkins pour les plugins : http://localhost:8080/pluginManager/advanced  
+- Ajout du mot de passe admin pour débloquer Jenkins :
+```
+docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword   
+```
+- Mise à jour du proxy dans Jenkins pour les plugins : [http://localhost:8080/pluginManager/advanced](http://localhost:8080/pluginManager/advanced)
 - Installation des plugins par défaut
 - Aller dans "**Administrer Jenkins > Configuration globale des outils**" pour configurer les outils suivants :
 1. JDK *(décocher Install automatically)* : 
@@ -19,7 +21,7 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 	- Nom : M3 
 	- MAVEN\_HOME : /usr/share/maven 
  
-- Configuration du proxy maven dans le docker JenkinsCI :  
+- Configuration du proxy pour Maven dans le docker JenkinsCI :  
 ```
 docker exec -it JenkinsCI bash  
 dos2unix /usr/share/maven/conf/settings.xml   

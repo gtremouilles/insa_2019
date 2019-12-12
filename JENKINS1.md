@@ -32,10 +32,10 @@
 - Afficher la nouvelle vue
 
 ## Création de l'item Petclinic_package
-- Description : cet item doit faite le package WAR du projet. Il doit pouvoir utiliser le workspace de l'item précédent.
+- Description : cet item doit construire le package WAR du projet. Il doit pouvoir utiliser le workspace de l'item précédent.
 - Nom : Petclinic\_package
 - Type : Projet Maven
-- Paramètre string : WORKSPACE_PARENT
+- Paramètre string : WORKSPACE\_PARENT
 - Actions :
 1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Lance la tâche maven "**package**"
@@ -44,8 +44,10 @@
 > Astuce : Chaîner les items en utilisant une action "Trigger parameterized build on other projects"
 
 ## Création de l'item "Petclinic_deployQualification"
+- Description : cet item doit copier le WAR généré dans un répertoitre sur le serveur
 - Nom : Petclinic_deployQualification
 - Type : Projet free-style
+- Paramètre string : WORKSPACE\_PARENT
 - Actions :
 1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Copie le fichier **petclinic.war** du workspace (répertoire target) dans **/var/tmp**
