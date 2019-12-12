@@ -1,4 +1,4 @@
-<center><img src="images/jenkins.png" alt="Sonarqube" width="300"/></center>
+<center><img src="images/jenkins.png" alt="Jenkins" width="300"/></center>
 
 # Utilisation d'un Jenkinsfile
 - Modifier le fichier Jenkinsfile de votre projet spring-framework-petclinic sous GitHub de la façon suivante :   
@@ -40,7 +40,27 @@ pipeline {
 ```   
 
 - Remplacer XXXXXX dans l'URL Git par votre compte GitHub
-- Lancer le build manuellement
-- Ouvrir le pipeline avec OpenBlueOcean pour voir le résultat
-
 > Pour plus d'informations sur la construction du Jenkinsfile, aller à l'adresse suivante : [https://jenkins.io/doc/book/pipeline/jenkinsfile/](https://jenkins.io/doc/book/pipeline/jenkinsfile/)
+
+## Création de l'item Petclinic_pipeline
+- Description : cet item va récupérer automatiquement le Jenkinsfile à la racine du projet et va permettre de lancer les différentes tâches pour le déploiement.
+- Nom : Petclinic_deployQualification
+- Type : Pipeline
+- Déclarer un pipeline avec la définition "**Pipeline script from SCM**"
+- Choisir le SCM "**Git**" et renseigner les informations du repository
+- Ouvrir le pipeline avec "**Open Blue Ocean**"
+
+<center><img src="images/jenkins6.png" alt="Jenkins" width="200"/></center>
+
+ - Lancer le build  
+ 
+<center><img src="images/jenkins7.png" alt="Jenkins" width="300"/></center>
+
+ - Build en cours de construction :  
+
+<center><img src="images/jenkins8.png" alt="Jenkins" width="1042"/></center>
+
+ - Fin de la construction :  
+
+<center><img src="images/jenkins9.png" alt="Jenkins" width="1042"/></center>
+
