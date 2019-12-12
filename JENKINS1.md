@@ -39,7 +39,7 @@
 - Actions :
 1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Lance la tâche maven "**package**"
-3. Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSAPCE\_PARENT
+- Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSAPCE\_PARENT
 - Modifier l'item "**Petclinic\_compile**" pour ajouter l'appel à l'item "**Petclinic\_package**" après le lancement de la tâche maven "**clean compile**". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "**Petclinic\_compile**"
 > Astuce : Chaîner les items en utilisant une action "Trigger parameterized build on other projects"
 
@@ -49,7 +49,8 @@
 - Actions :
 1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Copie le fichier **petclinic.war** du workspace (répertoire target) dans **/var/tmp**
-3. Modifier l'item "Petclinic\_package" pour ajouter l'appel à l'item "Petclinic\_deployQualification" après le lancement de la tâche maven "**package**". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "**Petclinic\_package**"
+- Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSAPCE\_PARENT
+- Modifier l'item "Petclinic\_package" pour ajouter l'appel à l'item "Petclinic\_deployQualification" après le lancement de la tâche maven "**package**". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "**Petclinic\_package**"
 
 ## Lancement du build 
 - Lancer le build manuellement et vérifier que le WAR est bien déployé dans le répertoire "**/var/tmp**"  
