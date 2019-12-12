@@ -62,7 +62,7 @@ dos2unix /usr/share/maven/conf/settings.xml
 > NEW\_NAME="petclinic\_$BUILD\_NUMBER-$DATE\_WITH\_TIME.war";  
 9. Ajouter une action à la suite du build pour archiver l'artifact généré (fichier WAR)
 10. Lancer le build manuellement  
-12. (Option) Ajouter une action pour supprimer le workspace une fois le build terminé
+12. (En option) Ajouter une action pour supprimer le workspace une fois le build terminé
 
 
 

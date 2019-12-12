@@ -11,14 +11,11 @@ docker run -d --name sonarqube -p 9000:9000 sonarqube
 
 # Analyse du projet spring-framework-petclinic
 
-- Se connecter sur le docker JenkinsCI avec la commande bash :  
+- Dans un terminal Ubuntu, se connecter sur le docker JenkinsCI avec la commande bash :  
 ```
 docker exec -it JenkinsCI bash
 ``` 
-- Récupérer les sources du projet spring-framework-petclinic (remplacer XXXXXXX par votre compte GitHub) :  
-```
-git clone https://github.com/XXXXXXX/spring-framework-petclinic.git
-```
+- Se placer dans le répertoire "**/var/jenkins_home/workspace/Petclinic**"
 - Lancer une analyse sonar :   
 ```
 mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
@@ -36,7 +33,7 @@ mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
 # Correction d'un bug
 
 - Dans Sonarqube, consulter le 1er bug rencontré dans le fichier "**src/main/webapp/WEB-INF/jsp/owners/ownerDetails.jsp**"
-- Corriger ce bug dans le projet spring-framework-petclinic
+- Corriger ce bug dans le projet spring-framework-petclinic dans GitHub et faire un commit de la correction
 - Relancer une analyse Sonar
 - Vérifier que le bug a bien disparu dans l'analyse
 

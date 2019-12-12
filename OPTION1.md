@@ -17,5 +17,5 @@ But : utiliser le plugin "**promoted builds**" pour valider manuellement le dép
 1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Activer l'option "**Promote builds when...**", spécifier un critère et une action
 3. Modifier l'item "**Petclinic_package**" qui doit maintenant appeler ce nouvel item.
-4. Lancer un build manuellement
+4. Lancer un build de l'item "**Petclinic\_compile**" manuellement
 

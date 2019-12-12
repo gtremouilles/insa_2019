@@ -1,7 +1,7 @@
 <center><img src="images/sonarqube.png" alt="Sonarqube" width="300"/></center>
 
 # Quality Profiles
-But : Ajouter un nouveau profil "**Java**" qui est une copie du profil "**Sonar Way**" mais qui contient des règles en moins.   
+But : Ajouter un nouveau profil "**Java**" qui est une copie du profil "**Sonar Way**" mais qui contient moins de règles.   
 
 - Ouvrir le menu "**Quality profiles**"  
 - Filtrer sur le profil "**Java**"   
@@ -16,7 +16,7 @@ But : Ajouter un nouveau profil "**Java**" qui est une copie du profil "**Sonar 
 
 - Définir ce nouveau profil Java comme profil par défaut
 - Relancer une analyse Sonar
-- Vérifier que le bon "Quality profil" a été utilisé :
+- Vérifier que le bon "**Quality profil**" a été utilisé :
 <center><img src="images/sonar7.png" alt="Sonarqube" width="130"/></center>
 - Que se passe-t-il au niveau du nombre de bugs ?
 
@@ -25,7 +25,7 @@ But : Ajouter un nouveau profil "**Java**" qui est une copie du profil "**Sonar 
 But : Ajouter une condition pour faire échouer le résultat de l'analyse Sonar.   
 - Ouvrir le menu "**Quality Gates**"  
 - Créer une nouvelle "**Quality Gate**" et la nommer "**Petclinic**"  
-- La positionner par défaut
+- La positionner par défaut  
 - Ajouter une condition avec la métrique "**Reliability/Bugs**" et positionner la valeur "**Error**" à 3  
 - Relancer une analyse Sonar  
 - Vérifier que l'analyse est en bien à l'état "**Failed**"
