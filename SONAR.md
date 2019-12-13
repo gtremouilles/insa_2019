@@ -16,6 +16,13 @@ docker run -d --name sonarqube -p 9000:9000 sonarqube
 docker exec -it JenkinsCI bash
 ``` 
 - Se placer dans le répertoire "**/var/jenkins_home/workspace/Petclinic**"
+```
+cd /var/jenkins_home/workspace/Petclinic
+```
+	- Si le répertoire est vide, récupérer les sources du projet spring-framework-petclinic (remplacer XXXXXXX par votre compte GitHub) :  
+```
+git clone https://github.com/XXXXXXX/spring-framework-petclinic.git
+```
 - Lancer une analyse sonar :   
 ```
 mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000

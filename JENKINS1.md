@@ -51,7 +51,7 @@
 - Actions :
 1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Copie le fichier **petclinic.war** du workspace (répertoire target) dans **/var/tmp**
-- Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSAPCE\_PARENT
+- Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSPACE\_PARENT
 - Modifier l'item "**Petclinic\_package**" pour ajouter l'appel à l'item "**Petclinic\_deployQualification**" après le lancement de la tâche maven "**package**". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "**Petclinic\_package**"
 
 ## Lancement du build 
