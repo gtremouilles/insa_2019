@@ -40,7 +40,7 @@
 1. Prends en paramètre le workspace du build parent (WORKSPACE\_PARENT)
 2. Lance la tâche maven "**package**"
 - Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSPACE\_PARENT
-- Modifier l'item "**Petclinic\_compile**" pour ajouter l'appel à l'item "**Petclinic\_package**" après le lancement de la tâche maven "**clean compile**". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "**Petclinic\_compile**"
+- Modifier l'item "**Petclinic\_compile**" pour ajouter l'appel à l'item "**Petclinic\_package**" après le lancement de la tâche maven "**clean compile**". Initialiser la variable WORKSPACE\_PARENT avec le workspace de l'item "**Petclinic\_compile**" ("**Predefined parameters**" avec le paramètre : **WORKSPACE_PARENT=$WORKSPACE**)
 > Astuce : Chaîner les items en utilisant une action "**Trigger parameterized build on other projects**"
 
 ## Création de l'item "Petclinic_deployQualification"
