@@ -18,4 +18,8 @@ But : utiliser le plugin "**promoted builds**" pour valider manuellement le dép
 2. Activer l'option "**Promote builds when...**", spécifier un critère et une action
 3. Modifier l'item "**Petclinic_package**" qui doit maintenant appeler ce nouvel item.
 4. Lancer un build de l'item "**Petclinic\_compile**" manuellement
+5. Lorsque le build arrivera à l'étape "**Petclinic_promoteQualification**", il faudra alors approuver manuellement le "**Promotion Status**"
 
+<img src="images/option1.png" alt="Jenkins" width="200"/>
+
+<img src="images/option2.png" alt="Jenkins" width="1042"/>
