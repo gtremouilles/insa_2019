@@ -19,7 +19,7 @@ docker exec -it JenkinsCI bash
 ```
 cd /var/jenkins_home/workspace/Petclinic
 ```
-	- Si le répertoire est vide, récupérer les sources du projet spring-framework-petclinic (remplacer XXXXXXX par votre compte GitHub) :  
+- Si le répertoire est vide, récupérer les sources du projet spring-framework-petclinic (remplacer XXXXXXX par votre compte GitHub) :  
 ```
 git clone https://github.com/XXXXXXX/spring-framework-petclinic.git
 ```
