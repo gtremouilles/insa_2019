@@ -19,7 +19,7 @@ pipeline {
                 parallel(  
                   build: {  
                     echo 'Building...'  
-                    sh 'mvn clean install'  
+                    sh 'mvn clean package'  
                     archiveArtifacts 'target/*.war'  
                   },  
                   sonar: {  
