@@ -22,9 +22,10 @@ But : utiliser le plugin "**promoted builds**" pour valider manuellement le dép
 3. Modifier l'item "**Petclinic\_package**" qui doit maintenant appeler ce nouvel item  
 4. Lancer un build de l'item "**Petclinic\_compile**" manuellement
 
-> Astuce : pour regrouper 2 items dans le même groupe de la vue "**Delivery pipeline**", ajouter le même "**Stage name**" sur les 2 items :
-<img src="images/option3.png" alt="Jenkins" width="1042"/>
-A faire pour les items "**Petclinic\_promoteQualifiaction**" et "**Petclinic\_deployQualification**"
+> Astuce : pour regrouper 2 items dans le même groupe de la vue "**Delivery pipeline**", ajouter le même "**Stage name**" sur les 2 items :  
+><img src="images/option3.png" alt="Jenkins" width="1042"/>  
+
+>A faire pour les items "**Petclinic\_promoteQualifiaction**" et "**Petclinic\_deployQualification**"
 
 - Lorsque le build arrivera à l'étape "**Petclinic_promoteQualification**", il faudra alors approuver manuellement le "**Promotion Status**"
 
