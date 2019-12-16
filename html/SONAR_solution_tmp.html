@@ -421,7 +421,8 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
           : 'default'
     });
   </script>
-<center><img src="images/sonarqube.png" alt="Sonarqube" width="300"></center>
+<center><img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar/images/sonarqube.png" alt="Sonarqube" width="300"></center>
+<h1 id="solution-version-pdf">Solution <a href="pdf/SONAR_solution.md.pdf" title="Ouvrir la version PDF">[Version PDF]</a></h1>
 <h1 id="installation-du-docker">Installation du docker</h1>
 <ul>
 <li>Lancer le docker Sonarqube :</li>
@@ -429,7 +430,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <pre class="hljs"><code><div>docker run -d --name sonarqube -p 9000:9000 sonarqube
 </div></code></pre>
 <ul>
-<li>Dans un navigateur, aller sur l'URL : <a href="http://localhost:9000">http://localhost:9000</a></li>
+<li>Dans un navigateur, aller sur l'URL : <a href="http://10.0.0.100:9000">http://10.0.0.100:9000</a></li>
 <li>Se connecter avec le compte &quot;admin&quot; (mdp: admin)</li>
 </ul>
 <h1 id="analyse-du-projet-spring-framework-petclinic">Analyse du projet spring-framework-petclinic</h1>
@@ -451,16 +452,16 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <ul>
 <li>Lancer une analyse sonar :</li>
 </ul>
-<pre class="hljs"><code><div>mvn clean verify sonar:sonar -Dsonar.host.url=http://&lt;IP_SERVEUR_SONAR&gt;:9000
+<pre class="hljs"><code><div>mvn clean verify sonar:sonar -Dsonar.host.url=http://10.0.0.100:9000
 </div></code></pre>
 <ul>
 <li>Consulter les résultats sur Sonarqube :</li>
 </ul>
-<img src="images/sonar1.png" alt="Sonarqube" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar/images/sonar1.png" alt="Sonarqube" width="1042">
 <ul>
 <li>Consulter la liste des bugs :</li>
 </ul>
-<img src="images/sonar2.png" alt="Sonarqube" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar/images/sonar2.png" alt="Sonarqube" width="1042">
 <hr>
 <h1 id="correction-dun-bug">Correction d'un bug</h1>
 <ul>
@@ -468,7 +469,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <li>Corriger ce bug dans le projet spring-framework-petclinic dans GitHub et faire un commit de la correction</li>
 <li>Relancer une analyse Sonar :</li>
 </ul>
-<pre class="hljs"><code><div>mvn clean verify sonar:sonar -Dsonar.host.url=http://&lt;IP_SERVEUR_SONAR&gt;:9000
+<pre class="hljs"><code><div>mvn clean verify sonar:sonar -Dsonar.host.url=http://10.0.0.100:9000
 </div></code></pre>
 <ul>
 <li>Vérifier que le bug a bien disparu dans l'analyse</li>
@@ -478,18 +479,18 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <li>A partir du menu &quot;<strong>Rules</strong>&quot;, sélectionner une règle de type &quot;<strong>Bug</strong>&quot; dans le langage &quot;<strong>Java</strong>&quot;</li>
 <li>Copier la partie &quot;<strong>Noncompliant Code Example</strong>&quot; de cette règle et coller les lignes dans un fichier source Java du projet spring-framework-petclinic</li>
 </ul>
-<img src="images/sonar_sol1.png" alt="Sonarqube" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar/images/sonar_sol1.png" alt="Sonarqube" width="1042">
 <ul>
 <li>Relancer une analyse Sonar :</li>
 </ul>
-<pre class="hljs"><code><div>mvn clean verify sonar:sonar -Dsonar.host.url=http://&lt;IP_SERVEUR_SONAR&gt;:9000  
+<pre class="hljs"><code><div>mvn clean verify sonar:sonar -Dsonar.host.url=http://10.0.0.100:9000  
 </div></code></pre>
 <ul>
 <li>Vérifier que votre nouveau bug est bien remonté dans l'analyse Sonar
 <img src="images/sonar_sol2.png" alt="Sonarqube" width="1042"/></li>
 </ul>
 <hr>
-<img src="images/sonar_sol3.png" alt="Sonarqube" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar/images/sonar_sol3.png" alt="Sonarqube" width="1042">
 
 </body>
 </html>

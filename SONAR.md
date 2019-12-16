@@ -6,7 +6,7 @@
 ```
 docker run -d --name sonarqube -p 9000:9000 sonarqube
 ```
-- Dans un navigateur, aller sur l'URL : [http://localhost:9000](http://localhost:9000)
+- Dans un navigateur, aller sur l'URL : [http://10.0.0.100:9000](http://10.0.0.100:9000)
 - Se connecter avec le compte "admin" (mdp: admin)
 
 # Analyse du projet spring-framework-petclinic
@@ -25,7 +25,7 @@ git clone https://github.com/XXXXXXX/spring-framework-petclinic.git
 ```
 - Lancer une analyse sonar :   
 ```
-mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
+mvn clean verify sonar:sonar -Dsonar.host.url=http://10.0.0.100:9000
 ```
 
 - Consulter les résultats sur Sonarqube :

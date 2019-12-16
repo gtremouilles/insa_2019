@@ -7,7 +7,7 @@
 ```
 docker run -d --name sonarqube -p 9000:9000 sonarqube
 ```
-- Dans un navigateur, aller sur l'URL : [http://localhost:9000](http://localhost:9000)
+- Dans un navigateur, aller sur l'URL : [http://10.0.0.100:9000](http://10.0.0.100:9000)
 - Se connecter avec le compte "admin" (mdp: admin)
 
 # Analyse du projet spring-framework-petclinic
@@ -30,7 +30,7 @@ git clone https://github.com/XXXXXXX/spring-framework-petclinic.git
 
 - Lancer une analyse sonar :   
 ```
-mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
+mvn clean verify sonar:sonar -Dsonar.host.url=http://10.0.0.100:9000
 ```
 
 - Consulter les résultats sur Sonarqube :
@@ -48,7 +48,7 @@ mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
 - Corriger ce bug dans le projet spring-framework-petclinic dans GitHub et faire un commit de la correction
 - Relancer une analyse Sonar :
 ```
-mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
+mvn clean verify sonar:sonar -Dsonar.host.url=http://10.0.0.100:9000
 ```
 - Vérifier que le bug a bien disparu dans l'analyse
 
@@ -60,7 +60,7 @@ mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000
 
 - Relancer une analyse Sonar :  
 ```
-mvn clean verify sonar:sonar -Dsonar.host.url=http://<IP_SERVEUR_SONAR>:9000  
+mvn clean verify sonar:sonar -Dsonar.host.url=http://10.0.0.100:9000  
 ```
 - Vérifier que votre nouveau bug est bien remonté dans l'analyse Sonar
 <img src="images/sonar_sol2.png" alt="Sonarqube" width="1042"/>  
