@@ -4,7 +4,7 @@
 
 ----------
 
-# Industrialisation
+# Intégration et Continuous Delivery
 
 - [Cours](pdf/INSA_2019_Intégration_et_Continuous_Delivery.pdf "Ouvrir le cours industrialisation") 
 
