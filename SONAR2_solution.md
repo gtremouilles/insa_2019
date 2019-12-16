@@ -1,5 +1,7 @@
 <center><img src="images/sonarqube.png" alt="Sonarqube" width="300"/></center>
 
+# Solution [[Version PDF]](pdf/SONAR2_solution.md.pdf "Ouvrir la version PDF")
+
 # Intégration dans Jenkins
 But : Ajouter un item d'analyse Sonar en parallèle de l'item "**Petclinic_package**"  
 <center><img src="images/jenkins1.png" alt="Sonarqube" width="600"/></center>

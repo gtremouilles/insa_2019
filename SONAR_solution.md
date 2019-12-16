@@ -1,5 +1,6 @@
 <center><img src="images/sonarqube.png" alt="Sonarqube" width="300"/></center>
 
+# Solution [[Version PDF]](pdf/SONAR_solution.md.pdf "Ouvrir la version PDF")
 
 # Installation du docker
 - Lancer le docker Sonarqube :   

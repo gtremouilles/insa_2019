@@ -1,5 +1,7 @@
 <center><img src="images/sonarqube.png" alt="Sonarqube" width="300"/></center>
 
+# Solution [[Version PDF]](pdf/SONAR1_solution.md.pdf "Ouvrir la version PDF")
+
 # Quality Profiles
 But : Ajouter un nouveau profil "**Java**" qui est une copie du profil "**Sonar Way**" mais qui contient moins de règles.   
 

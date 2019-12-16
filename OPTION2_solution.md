@@ -1,5 +1,7 @@
 <center><img src="images/jenkins.png" alt="Jenkins" width="300"/></center>
 
+# Solution [[Version PDF]](pdf/OPTION2_solution.md.pdf "Ouvrir la version PDF")
+
 # Utilisation d'un Jenkinsfile
 - Modifier le fichier Jenkinsfile de votre projet spring-framework-petclinic sous GitHub de la façon suivante :   
 ```groovy   

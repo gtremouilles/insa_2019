@@ -1,5 +1,7 @@
 <center><img src="images/jenkins.png" alt="Sonarqube" width="300"/></center>
 
+# Solution [[Version PDF]](pdf/OPTION1_solution.md.pdf "Ouvrir la version PDF")
+
 # Utilisation du plugin "promoted builds"
 But : utiliser le plugin "**promoted builds**" pour valider manuellement le déploiement sur le serveur de qualification
 

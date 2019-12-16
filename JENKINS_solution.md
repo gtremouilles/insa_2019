@@ -1,6 +1,8 @@
 <center><img src="images/jenkins.png" alt="Jenkins" width="290"/></center>
 
-# Installation du docker Jenkins
+# Solution [[Version PDF]](pdf/JENKINS_solution.md.pdf "Ouvrir la version PDF")
+
+# Installation du docker Jenkins [[Version PDF]](pdf/JENKINS_solution.md.pdf "Ouvrir la version PDF")
 
 - Dans un terminal Ubuntu, exécuter les commandes suivantes :  
 ``` 
