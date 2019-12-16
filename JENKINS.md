@@ -8,12 +8,12 @@ docker pull frouland/myjenkins:0.2
 docker run -d --name JenkinsCI -e http_proxy='proxy.insa-rouen.fr:3128' -e https_proxy='proxy.insa-rouen.fr:3128' -p 8080:8080 -p 50000:50000 frouland/myjenkins:0.2    
 ```
 
-- Dans un navigateur, ouvrir l'URL : [http://localhost:8080/](http://localhost:8080/)
+- Dans un navigateur, ouvrir l'URL : [http://10.0.0.100:8080/](http://10.0.0.100:8080/)
 - Ajout du mot de passe admin pour débloquer Jenkins :
 ```
 docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword   
 ```
-- Mise à jour du proxy dans Jenkins pour les plugins : [http://localhost:8080/pluginManager/advanced](http://localhost:8080/pluginManager/advanced)
+- Mise à jour du proxy dans Jenkins pour les plugins : [http://10.0.0.100:8080/pluginManager/advanced](http://10.0.0.100:8080/pluginManager/advanced)
 - Installation des plugins par défaut
 - Aller dans "**Administrer Jenkins > Configuration globale des outils**" pour configurer les outils suivants :
 1. JDK *(décocher Install automatically)* : 
@@ -30,8 +30,7 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 docker exec -it JenkinsCI bash  
 dos2unix /usr/share/maven/conf/settings.xml   
 ``` 	
-- Récupérer l'adresse IP de votre serveur Ubuntu : ```ifconfig```
-- Editer le fichier "**/usr/share/maven/conf/settings.xml**" et ajouter les lignes suivantes dans la section **proxies** (remplacer **[ADRESSE\_IP\_UBUNTU]** par l'addresse IP du serveur Ubuntu):  
+- Editer le fichier "**/usr/share/maven/conf/settings.xml**" et ajouter les lignes suivantes dans la section **proxies**:  
 ```xml
 <proxy>  
 	<id>optional</id>  
@@ -41,7 +40,7 @@ dos2unix /usr/share/maven/conf/settings.xml
 	<password></password>  
 	<host>proxy.insa-rouen.fr</host>  
 	<port>3128</port>  
-	<nonProxyHosts>local.net|some.host.com|[ADRESSE_IP_UBUNTU]</nonProxyHosts>  
+	<nonProxyHosts>local.net|some.host.com|10.0.0.100</nonProxyHosts>  
 </proxy>  
 ```
 
