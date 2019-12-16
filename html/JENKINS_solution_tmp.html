@@ -421,7 +421,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
           : 'default'
     });
   </script>
-<center><img src="images/jenkins.png" alt="Jenkins" width="290"></center>
+<center><img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins.png" alt="Jenkins" width="290"></center>
 <h1 id="installation-du-docker-jenkins">Installation du docker Jenkins</h1>
 <ul>
 <li>Dans un terminal Ubuntu, exécuter les commandes suivantes :</li>
@@ -430,13 +430,13 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 docker run -d --name JenkinsCI -e http_proxy='proxy.insa-rouen.fr:3128' -e https_proxy='proxy.insa-rouen.fr:3128' -p 8080:8080 -p 50000:50000 frouland/myjenkins:0.2 
 </div></code></pre>
 <ul>
-<li>Dans un navigateur, ouvrir l'URL : <a href="http://localhost:8080/">http://localhost:8080/</a></li>
+<li>Dans un navigateur, ouvrir l'URL : <a href="http://10.0.0.100:8080/">http://10.0.0.100:8080/</a></li>
 <li>Ajout du mot de passe admin pour débloquer Jenkins :</li>
 </ul>
 <pre class="hljs"><code><div>docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword   
 </div></code></pre>
 <ul>
-<li>Mise à jour du proxy dans Jenkins pour les plugins : <a href="http://localhost:8080/pluginManager/advanced">http://localhost:8080/pluginManager/advanced</a></li>
+<li>Mise à jour du proxy dans Jenkins pour les plugins : <a href="http://10.0.0.100:8080/pluginManager/advanced">http://10.0.0.100:8080/pluginManager/advanced</a></li>
 <li>Installation des plugins par défaut</li>
 <li>Aller dans &quot;<strong>Administrer Jenkins &gt; Configuration globale des outils</strong>&quot; pour configurer les outils suivants :</li>
 </ul>
@@ -464,7 +464,7 @@ docker run -d --name JenkinsCI -e http_proxy='proxy.insa-rouen.fr:3128' -e https
 dos2unix /usr/share/maven/conf/settings.xml   
 </div></code></pre>
 <ul>
-<li>Editer le fichier &quot;<strong>/usr/share/maven/conf/settings.xml</strong>&quot; et ajouter les lignes suivantes dans la section <strong>proxies</strong> (remplacer <strong>[ADRESSE_IP_UBUNTU]</strong> par l'addresse IP du serveur Ubuntu) :</li>
+<li>Editer le fichier &quot;<strong>/usr/share/maven/conf/settings.xml</strong>&quot; et ajouter les lignes suivantes dans la section <strong>proxies</strong> :</li>
 </ul>
 <pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">proxy</span>&gt;</span>  
 	<span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>optional<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>  
@@ -474,7 +474,7 @@ dos2unix /usr/share/maven/conf/settings.xml
 	<span class="hljs-tag">&lt;<span class="hljs-name">password</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">password</span>&gt;</span>  
 	<span class="hljs-tag">&lt;<span class="hljs-name">host</span>&gt;</span>proxy.insa-rouen.fr<span class="hljs-tag">&lt;/<span class="hljs-name">host</span>&gt;</span>  
 	<span class="hljs-tag">&lt;<span class="hljs-name">port</span>&gt;</span>3128<span class="hljs-tag">&lt;/<span class="hljs-name">port</span>&gt;</span>  
-	<span class="hljs-tag">&lt;<span class="hljs-name">nonProxyHosts</span>&gt;</span>local.net|some.host.com|[ADRESSE_IP_UBUNTU]<span class="hljs-tag">&lt;/<span class="hljs-name">nonProxyHosts</span>&gt;</span>  
+	<span class="hljs-tag">&lt;<span class="hljs-name">nonProxyHosts</span>&gt;</span>local.net|some.host.com|10.0.0.100<span class="hljs-tag">&lt;/<span class="hljs-name">nonProxyHosts</span>&gt;</span>  
 <span class="hljs-tag">&lt;/<span class="hljs-name">proxy</span>&gt;</span>  
 </div></code></pre>
 <h1 id="cr%C3%A9ation-dun-projet-free-style">Création d'un projet free-style</h1>
@@ -494,7 +494,7 @@ dos2unix /usr/share/maven/conf/settings.xml
 - Créer un credential de type &quot;**SSH Username with private key**&quot;
 - Renseigner un ID, un username, la &quot;**Private Key**&quot; et la passphrase (si nécéssaire)
 </code></pre>
-<img src="images/jenkins_sol3.png" alt="Jenkins" width="1042">  
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol3.png" alt="Jenkins" width="1042">  
 <ol start="2">
 <li>
 <p>Créer une tâche du build avec le type &quot;<strong>Invoquer les cibles Maven de haut niveau</strong>&quot;</p>
@@ -509,16 +509,16 @@ dos2unix /usr/share/maven/conf/settings.xml
 <p>Dans &quot;<strong>Avancé...</strong>&quot;, ajouter la propriété &quot;<strong>skipTests=true</strong>&quot; pour éviter le lancement des tests</p>
 </li>
 </ol>
-<img src="images/jenkins_sol4.png" alt="Jenkins" width="1042">  
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol4.png" alt="Jenkins" width="1042">  
 <ol start="6">
 <li>Lancer le build manuellement</li>
 </ol>
-<img src="images/jenkins_sol10.png" alt="Jenkins" width="200">  
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol10.png" alt="Jenkins" width="200">  
 <ol start="7">
 <li>Consulter le log du build et l'espace de travail</li>
 </ol>
-<img src="images/jenkins_sol5.png" alt="Jenkins" width="1042">    
-<img src="images/jenkins_sol6.png" alt="Jenkins" width="1042">   
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol5.png" alt="Jenkins" width="1042">    
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol6.png" alt="Jenkins" width="1042">   
 <ol start="8">
 <li>Ajouter une nouvelle tâche dans le build pour renommer le fichier <strong>petclinic.war</strong> généré dans le dossier target du workspace.<br>
 Le fichier sera renommé de la façon suivante : petclinic-NUM_BUILD-TIMESTAMP.war<br>
@@ -529,19 +529,19 @@ Exemple : petclinic-4-20191210102322.war</li>
 DATE_WITH_TIME=`date &quot;+%Y%m%d-%H%M%S&quot;`;<br>
 NEW_NAME=&quot;petclinic_$BUILD_NUMBER-$DATE_WITH_TIME.war&quot;;</p>
 </blockquote>
-<img src="images/jenkins_sol7.png" alt="Jenkins" width="1042">  
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol7.png" alt="Jenkins" width="1042">  
 <ol start="9">
 <li>Ajouter une action à la suite du build pour archiver l'artifact généré (fichier à archiver : <strong>target/*.war</strong>)</li>
 </ol>
-<img src="images/jenkins_sol8.png" alt="Jenkins" width="1042">  
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol8.png" alt="Jenkins" width="1042">  
 <ol start="10">
 <li>Lancer le build manuellement</li>
 </ol>
-<img src="images/jenkins_sol10.png" alt="Jenkins" width="200">  
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol10.png" alt="Jenkins" width="200">  
 <ol start="12">
 <li>(En option) Ajouter une action pour supprimer le workspace une fois le build terminé</li>
 </ol>
-<img src="images/jenkins_sol9.png" alt="Jenkins" width="1042">  
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol9.png" alt="Jenkins" width="1042">  
 
 </body>
 </html>

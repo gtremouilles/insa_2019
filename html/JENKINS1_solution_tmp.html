@@ -421,8 +421,8 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
           : 'default'
     });
   </script>
-<center><img src="images/jenkins.png" alt="Jenkins" width="290"></center>
-<h1 id="cr%C3%A9ation-dun-projet-maven">Création d'un projet Maven</h1>
+<center><img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins.png" alt="Jenkins" width="290"></center>
+<h1 id="cr%C3%A9ation-dun-projet-maven-version-pdf">Création d'un projet Maven <a href="pdf/JENKINS_solution.md.pdf" title="Ouvrir la vrsion PDF">[Version PDF]</a></h1>
 <ul>
 <li>Installer les plugins suivants :</li>
 </ul>
@@ -431,13 +431,13 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <li>Parameterized Trigger</li>
 <li>Delivery Pipeline Plugin</li>
 </ol>
-<img src="images/jenkins1_sol1.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol1.png" alt="Jenkins" width="1042">
 <hr>
 <ul>
 <li>Cible à atteindre :</li>
 </ul>
 <center> 
-<img src="images/image1.png">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/image1.png">
 </center>
 <hr>
 <h2 id="cr%C3%A9ation-de-litem-petcliniccompile">Création de l'item &quot;Petclinic_compile&quot;</h2>
@@ -446,41 +446,41 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <li>Nom : Petclinic_compile</li>
 <li>Type : Projet Maven</li>
 </ul>
-<img src="images/jenkins1_sol2.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol2.png" alt="Jenkins" width="1042">
 <ul>
 <li>Actions :</li>
 </ul>
 <ol>
 <li>Récupère les sources sur GitHub</li>
 </ol>
-<img src="images/jenkins_sol3.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins_sol3.png" alt="Jenkins" width="1042">
 <ol start="2">
 <li>Lance la tâche maven &quot;<strong>clean compile</strong>&quot;</li>
 </ol>
-<img src="images/jenkins1_sol3.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol3.png" alt="Jenkins" width="1042">
 <h2 id="cr%C3%A9ation-dune-vue-de-type-delivery-pipeline-view">Création d'une vue de type &quot;Delivery Pipeline View&quot;</h2>
 <ul>
 <li>Description : cette vue permmettra d'afficher les enchaînements entre les items.</li>
 <li>Nom de la vue : Petclinic pipeline</li>
 </ul>
-<img src="images/jenkins1_sol4.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol4.png" alt="Jenkins" width="1042">
 <ul>
 <li>Dans la zone &quot;<strong>Pipelines</strong>&quot;, ajouter un component avec :</li>
 <li>Name : Petclinic pipeline</li>
 <li>Initial Job : Petclinic_compile</li>
 </ul>
-<img src="images/jenkins1_sol5.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol5.png" alt="Jenkins" width="1042">
 <ul>
 <li>Afficher la nouvelle vue</li>
 </ul>
-<img src="images/jenkins1_sol6.png" alt="Jenkins" width="600">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol6.png" alt="Jenkins" width="600">
 <h2 id="cr%C3%A9ation-de-litem-petclinicpackage">Création de l'item Petclinic_package</h2>
 <ul>
 <li>Description : cet item doit construire le package WAR du projet. Il doit pouvoir utiliser le workspace de l'item précédent.</li>
 <li>Nom : Petclinic_package</li>
 <li>Type : Projet Maven</li>
 </ul>
-<img src="images/jenkins1_sol7.png" alt="Jenkins" width="600">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol7.png" alt="Jenkins" width="600">
 <ul>
 <li>Paramètre string : WORKSPACE_PARENT</li>
 <li>Actions :</li>
@@ -488,7 +488,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <ol>
 <li>Prends en paramètre le workspace du build parent (WORKSPACE_PARENT)</li>
 </ol>
-<img src="images/jenkins1_sol8.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol8.png" alt="Jenkins" width="1042">
 <ol start="2">
 <li>Lance la tâche maven &quot;<strong>package</strong>&quot;<br>
 <img src="images/jenkins1_sol9.png" alt="Jenkins" width="1042"/></li>
@@ -496,21 +496,21 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <ul>
 <li>Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSPACE_PARENT</li>
 </ul>
-<img src="images/jenkins1_sol10.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol10.png" alt="Jenkins" width="1042">
 <ul>
 <li>Modifier l'item &quot;<strong>Petclinic_compile</strong>&quot; pour ajouter l'appel à l'item &quot;<strong>Petclinic_package</strong>&quot; après le lancement de la tâche maven &quot;<strong>clean compile</strong>&quot;. Initialiser la variable WORKSPACE_PARENT avec le workspace de l'item &quot;<strong>Petclinic_compile</strong>&quot; (&quot;<strong>Predefined parameters</strong>&quot; avec le paramètre : <strong>WORKSPACE_PARENT=$WORKSPACE</strong>)</li>
 </ul>
 <blockquote>
 <p>Astuce : Chaîner les items en utilisant une action &quot;<strong>Trigger parameterized build on other projects</strong>&quot;</p>
 </blockquote>
-<img src="images/jenkins1_sol11.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol11.png" alt="Jenkins" width="1042">
 <h2 id="cr%C3%A9ation-de-litem-petclinicdeployqualification">Création de l'item &quot;Petclinic_deployQualification&quot;</h2>
 <ul>
 <li>Description : cet item doit copier le WAR généré dans un répertoitre sur le serveur</li>
 <li>Nom : Petclinic_deployQualification</li>
 <li>Type : Projet free-style</li>
 </ul>
-<img src="images/jenkins1_sol12.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol12.png" alt="Jenkins" width="1042">
 <ul>
 <li>Paramètre string : WORKSPACE_PARENT</li>
 <li>Actions :</li>
@@ -518,19 +518,15 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <ol>
 <li>Prends en paramètre le workspace du build parent (WORKSPACE_PARENT)</li>
 </ol>
-<img src="images/jenkins1_sol8.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol8.png" alt="Jenkins" width="1042">
 <ol start="2">
-<li>Copie le fichier <strong>petclinic.war</strong> du workspace (répertoire target) dans <strong>/var/tmp</strong></li>
+<li>Copie le fichier &quot;<strong>$WORKSPACE_PARENT/target/petclinic.war</strong>&quot; du workspace dans le répertoire <strong>/var/tmp</strong></li>
 </ol>
-<img src="images/jenkins1_sol13.png" alt="Jenkins" width="1042">
-<ul>
-<li>Dans la section build, spécifier le répertoire de travail spécifique avec la valeur $WORKSPACE_PARENT</li>
-</ul>
-<img src="images/jenkins1_sol10.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol13.png" alt="Jenkins" width="1042">
 <ul>
 <li>Modifier l'item &quot;<strong>Petclinic_package</strong>&quot; pour ajouter l'appel à l'item &quot;<strong>Petclinic_deployQualification</strong>&quot; après le lancement de la tâche maven &quot;<strong>package</strong>&quot;. Initialiser la variable WORKSPACE_PARENT avec le workspace de l'item &quot;<strong>Petclinic_package</strong>&quot;</li>
 </ul>
-<img src="images/jenkins1_sol14.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol14.png" alt="Jenkins" width="1042">
 <h2 id="lancement-du-build">Lancement du build</h2>
 <ul>
 <li>Lancer le build manuellement et vérifier que le WAR est bien déployé dans le répertoire &quot;<strong>/var/tmp</strong>&quot;</li>
@@ -539,7 +535,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <blockquote>
 <p>Astuce : Utiliser l'expression * * * * * pour exécuter la tâche toutes les minutes</p>
 </blockquote>
-<img src="images/jenkins1_sol15.png" alt="Jenkins" width="1042">
+<img src="file:///d:/projets/INSA/TP/tp_jenkins_sonar_solution/images/jenkins1_sol15.png" alt="Jenkins" width="1042">
 <ul>
 <li>Faire une modification sur le projet dans GitHub puis un commit</li>
 <li>Vérifier que le build se lance bien automatiquement</li>
