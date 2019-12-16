@@ -1,6 +1,6 @@
 <center><img src="images/jenkins.png" alt="Jenkins" width="290"/></center>
 
-# Création d'un projet Maven [[Version PDF]](pdf/JENKINS_solution.md.pdf "Ouvrir la vrsion PDF")
+# Création d'un projet Maven [[PDF]](pdf/JENKINS_solution.md.pdf "Ouvrir la version PDF")[[HTML]](html/JENKINS1_solution_tmp.html "Ouvrir la vrsion HTML")
 - Installer les plugins suivants :
 1. Maven integration
 2. Parameterized Trigger
