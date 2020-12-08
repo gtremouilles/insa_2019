@@ -5,7 +5,7 @@
 - Dans un terminal Ubuntu, exécuter les commandes suivantes :  
 ``` 
 docker pull frouland/myjenkins:0.2   
-docker run -d --name JenkinsCI -e http_proxy='proxy.insa-rouen.fr:3128' -e https_proxy='proxy.insa-rouen.fr:3128' -p 8080:8080 -p 50000:50000 frouland/myjenkins:0.2    
+docker run -d --name JenkinsCI -p 8080:8080 -p 50000:50000 frouland/myjenkins:0.2    
 ```
 
 - Dans un navigateur, ouvrir l'URL : [http://10.0.0.100:8080/](http://10.0.0.100:8080/)
@@ -22,28 +22,6 @@ docker exec -it JenkinsCI cat /var/jenkins_home/secrets/initialAdminPassword
 2. Maven *(décocher Install automatically)* : 
 	- Nom : M3 
 	- MAVEN\_HOME : /usr/share/maven 
-
-## Configuration du proxy pour Maven dans le docker JenkinsCI
-
-- Dans un terminal Ubuntu, exécuter les commandes suivantes :  
-```
-docker exec -it JenkinsCI bash  
-dos2unix /usr/share/maven/conf/settings.xml   
-``` 	
-- Editer le fichier "**/usr/share/maven/conf/settings.xml**" et ajouter les lignes suivantes dans la section **proxies**:  
-```xml
-<proxy>  
-	<id>optional</id>  
-	<active>true</active>  
-	<protocol>http</protocol>  
-	<username></username>  
-	<password></password>  
-	<host>proxy.insa-rouen.fr</host>  
-	<port>3128</port>  
-	<nonProxyHosts>local.net|some.host.com|10.0.0.100</nonProxyHosts>  
-</proxy>  
-```
-
 
 
 # Création d'un projet free-style
