@@ -1,5 +1,5 @@
 # Récupération du projet de test
-- Récupération du projet petclinic via un fork : https://github.com/RavisankarCts/spring-framework-petclinic
+- Récupération du projet petclinic via un fork : https://github.com/spring-petclinic/spring-framework-petclinic
 - Dans les settings > Options > cocher Issues pour pouvoir créer des tickets sur le fork
 - Créer une branche develop depuis la branche master
 
