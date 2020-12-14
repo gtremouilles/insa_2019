@@ -12,7 +12,8 @@
 <center><img src="images/git_github.png" width="300"/></center>
 
 - [Cours](pdf/INSA_2019_GIT.pdf "Ouvrir le cours GIT")  
-- [TP](pdf/INSA_2019_TP_GIT.pdf "Ouvrir le TP GIT")
+- [TP les bases](pdf/INSA_2019_TP_GIT.pdf "Ouvrir le TP GIT")
+- [TP GitHub/GitLab](GITHUB.md "Ouvrir le TP GitHub/GitLab")
 
 ----------
 
