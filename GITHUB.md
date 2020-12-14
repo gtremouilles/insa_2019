@@ -32,3 +32,16 @@
 - Résoudre le conflit
 - Revenir sur la Pull Request et expliquer le nombre de commits
 - Valider la Pull Request (en profiter pour cloturer l'issue associée)
+
+# Quelques livraisons
+- Créer une branche release depuis la branche develop
+- Un bug a été détecté durant la recette, le corriger sur la branche release en ajoutant le texte "fix release" dans le Readme.md.
+- [facultatif] En même temps un bug en production a été détecté...
+  - depuis la branche master, créer une branche hotfix1
+  - sur cette nouvelle branche, modifier le Readme.md pour ajouter "hotfix prod"
+  - fusionner la branche hotfix sur la master
+ - Fusionner la branche release avec la branche master (gérer un éventuel conflit...)
+ - Créer un tag sur la master pour marquer la mise en production
+ - Faire une comparaison entre la branche develop et la branche master
+ - Et enfin, un resynchronise la branche develop avec la nouvelle version de la master (permet de se mettre à jour des derniers hotfix et bug fixes de release)
+ 
