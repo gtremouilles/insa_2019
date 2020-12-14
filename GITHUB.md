@@ -3,12 +3,16 @@
 - Dans les settings > Options > cocher Issues pour pouvoir créer des tickets sur le fork
 - Créer une branche develop depuis la branche master
 
-
-# Ajout d'une fonctionnalité
-- Créer une branche feature/exo1 depuis la branche develop
+# Un peu de suivi de projet
+- Dans Issues > Milestones, créer une nouvelle milestone "TP Git"
 - Créer une nouvelle issue "exo 1"
 - S'affecter cette nouvelle issue
 - Lui donner un label documentation
+- Créer deux issues "exo 2" et "exo 2 bis"
+- Affecter les 3 issues à la milestone "TP Git"
+
+# Ajout d'une fonctionnalité
+- Créer une branche feature/exo1 depuis la branche develop
 - Dans la branche feature/exo1, modifier le fichier Readme.MD et ajouter le texte "# TP INSA" en début de fichier
 - Lors du commit, s'assurer que la branche sélectionnée est bien "feature/exo1" et ajouter un lien avec l'issue associée. Pour cela la référencer dans le message de commit avec "#ID_ISSUE"
 - Créer une nouvelle Pull Request : * Bien spécifier les branches de destination et d'origine !* : 
