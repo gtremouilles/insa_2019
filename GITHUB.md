@@ -25,7 +25,6 @@
 - Regarder le statut de l'issue associée
 
 # Un petit conflit
-- Créer deux issues "Exo2" et "Exo2bis"
 - Depuis la branche develop éditer le fichier Readme.MD et ajouter le texte "Exo2"
 - Sauvegarder les modification mais indiquer qu'on vise une nouvelle branche (feature/exo2) et pas la branche develop
 - Cela crée automatiquement une Pull Request qu'on ne valide pas pour le moment
