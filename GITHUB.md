@@ -18,8 +18,8 @@
 - Créer une nouvelle Pull Request : * Bien spécifier les branches de destination et d'origine !* : 
   - destination : bien choisir son projet et la branche develop
   - origine : la branche feature/exo1
-- Inspecter la Pull Request et la valider avec un commentaire particulier
   - Préfixer le commentaire par la mention "Fixes #ID_ISSUE"
+- Inspecter la Pull Request et la valider avec un commentaire particulier
   - Accepter la fusion (attention à ne pas cloturer la Pull Request)
 - Regarder le contenu des branches develop, master et feature
 - Regarder le statut de l'issue associée
