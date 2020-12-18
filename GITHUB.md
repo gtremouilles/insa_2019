@@ -2,6 +2,7 @@
 - Récupération du projet petclinic via un fork : https://github.com/spring-petclinic/spring-framework-petclinic
 - Dans les settings > Options > cocher Issues pour pouvoir créer des tickets sur le fork
 - Créer une branche develop depuis la branche master
+- Dans Settings > Branches, indiquer que la branche develop est la branche principale
 
 # Un peu de suivi de projet
 - Dans Issues > Milestones, créer une nouvelle milestone "TP Git"
@@ -46,5 +47,5 @@
  - Fusionner la branche release avec la branche master (gérer un éventuel conflit...)
  - Créer un tag sur la master pour marquer la mise en production
  - Faire une comparaison entre la branche develop et la branche master
- - Et enfin, un resynchronise la branche develop avec la nouvelle version de la master (permet de se mettre à jour des derniers hotfix et bug fixes de release)
+ - Et enfin, on resynchronise la branche develop avec la nouvelle version de la master (permet de se mettre à jour des derniers hotfix et bug fixes de release)
  
