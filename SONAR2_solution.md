@@ -16,18 +16,7 @@ But : Ajouter un item d'analyse Sonar en parallèle de l'item "**Petclinic_packa
 	- SONAR\_RUNNER\_HOME : /usr/share/sonar-scanner-4.2.0.1873  
 	
 	<img src="images/sonar2_sol2.png" alt="Sonarqube" width="1042"/>
-- Dans **Sonarqube** :  
-	-  Aller dans le menu "**Administration > Configuration > Webhooks**"  
-	
-	<img src="images/sonar2_sol3.png" alt="Sonarqube" width="1042"/>  
-	
-	-  Créer un webhook avec les informations suivantes :  
-		- Name : Jenkins  
-		- URL : http://[IP\_SERVEUR\_JENKINS]:8080/sonarqube-webhook  
-		- Secret : laisser vide  
-		
-		<img src="images/sonar2_sol4.png" alt="Sonarqube" width="1042"/>
-		
+- Dans **Sonarqube** :  		
 	- Aller dans le menu "**My account > Security**" et générer un token. 
 	
 	<img src="images/sonar2_sol5.png" alt="Sonarqube" width="300"/>  
